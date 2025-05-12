@@ -1,8 +1,10 @@
-x = 2 + 3
-y = 3
-z = x + y
-z
-
-
-
-
+juego MiAventura {
+    escena Entrada {
+        mostrar "Estás en la entrada.";
+        mostrar "Hay dos caminos.";
+    }
+    escena CaminoBosque {
+        mostrar "Entraste al bosque oscuro.";
+        leer decisionBosque;
+    }
+}

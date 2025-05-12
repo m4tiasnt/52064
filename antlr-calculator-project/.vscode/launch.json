@@ -4,9 +4,9 @@
     {
     "name": "Debug ANTLR4 grammar",
     "type": "antlr-debug",
-    "request": "launch",
+    "request": "launch",    
     "input": "input.txt",
-    "grammar": "Calculator.g4",
+    "grammar": "Juego.g4",
     "printParseTree": true,
     "visualParseTree": true
     }

@@ -1,0 +1,26 @@
+```
+<juego> ::= "juego" <nombre> "{" <escenas> "}"
+
+<escenas> ::= { <escena> }
+<escena> ::= "escena" <nombre> "{" <acciones> "}"
+<acciones> ::= { <imprimir> | <leer> | <condición> | <saltar> }
+
+<imprimir> ::= "mostrar" <texto> ";"
+<leer> ::= "leer" <variable> ";"
+<condición> ::= "si" <comparación> "saltar" <nombre> ";" // MODIFICADO - ANTES ERA: <condición> ::= "si" <comparación> "saltar" <escena> ";"
+<comparación> ::= <variable> "==" <valor>
+<saltar> ::= "saltar" <nombre> ";" // AGREGADO - quizás no va?
+
+<nombre> ::= identificador // AGREGADO
+<texto> ::= '"' { <caracter> } '"' // AGREGADO 
+<variable> ::= identificador // AGREGADO 
+<valor> ::= <numero> | <texto>  // AGREGADO 
+identificador ::= <letra> { <letra> | <digito> } // AGREGADO - podría reemplazar a <nombre> y <variable>  directamente 
+
+<caracter> ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" // AGREGADO 
+<digito> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" // AGREGADO 
+<numero> ::= <digito> { <digito> } // AGREGADO 
+```
+
+No se permiten los caracteres acentuados como el ejemplo da a entender.
+Se unificó variable y nombre ya que ambas son identificadores.

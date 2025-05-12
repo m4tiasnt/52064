@@ -1,10 +1,24 @@
-import CalculatorLexer from "./generated/CalculatorLexer.js";
-import CalculatorParser from "./generated/CalculatorParser.js";
-import { CustomCalculatorListener } from "./CustomCalculatorListener.js";
-import { CustomCalculatorVisitor } from "./CustomCalculatorVisitor.js";
+import JuegoLexer from "./generated/JuegoLexer.js";
+import JuegoParser from "./generated/JuegoParser.js";
+import { CustomJuegoListener } from "./CustomJuegoListener.js";
+import { CustomJuegoVisitor } from "./CustomJuegoVisitor.js";
 import antlr4, { CharStreams, CommonTokenStream, ParseTreeWalker } from "antlr4";
 import readline from 'readline';
 import fs from 'fs';
+
+async function leerCadena() {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+        rl.question('Ingrese una expresión: ', (input) => {
+            rl.close();
+            resolve(input);
+        });
+    });
+}
 
 async function main() {
     let input;
@@ -20,43 +34,29 @@ async function main() {
 
     // Proceso la entrada con el analizador e imprimo el arbol de analisis en formato texto
     let inputStream = CharStreams.fromString(input);
-    let lexer = new CalculatorLexer(inputStream);
+    let lexer = new JuegoLexer(inputStream);
     let tokenStream = new CommonTokenStream(lexer);
-    let parser = new CalculatorParser(tokenStream);
-    let tree = parser.prog();
+    let parser = new JuegoParser(tokenStream);
+    let tree = parser.juego();
     
     // Verifico si se produjeron errores
     if (parser.syntaxErrorsCount > 0) {
         console.error("\nSe encontraron errores de sintaxis en la entrada.");
-    } 
-    else {
-        console.log("\nEntrada válida.");
-        const cadena_tree = tree.toStringTree(parser.ruleNames);
-        console.log(`Árbol de derivación: ${cadena_tree}`);
-
-        // Utilizo un listener y un walker para recorrer el arbol e indicar cada vez que reconoce una sentencia (stat)
-        //const listener = new CustomCalculatorListener();
-        // ParseTreeWalker.DEFAULT.walk(listener, tree);
-
-        // Utilizo un visitor para visitar los nodos que me interesan de mi arbol
-        const visitor = new CustomCalculatorVisitor();
-        visitor.visit(tree);   
     }
+    
+    // Imprimo el arbol como texto - util para debug
+    console.log(tree.toStringTree(parser.ruleNames));
+
+    // Utilizando un visitor para recorrer el árbol (opcional)
+    let visitor = new CustomJuegoVisitor();
+    visitor.visit(tree);
+
+    // Utilizando un listener para recorrer el árbol (opcional)
+    let listener = new CustomJuegoListener();
+    let walker = new ParseTreeWalker();
+    walker.walk(listener, tree);
 }
 
-function leerCadena() {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    return new Promise(resolve => {
-        rl.question("Ingrese una cadena: ", (answer) => {
-            rl.close();
-            resolve(answer);
-        });
-    });
-}
-
-// Ejecuta la función principal
-main();
+main().catch(err => {
+    console.error('Error:', err);
+});

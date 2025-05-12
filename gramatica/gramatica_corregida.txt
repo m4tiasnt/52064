@@ -23,4 +23,3 @@ identificador ::= <letra> { <letra> | <digito> } // AGREGADO - podría reemplaza
 ```
 
 No se permiten los caracteres acentuados como el ejemplo da a entender.
-Se unificó variable y nombre ya que ambas son identificadores.

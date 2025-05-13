@@ -1,5 +1,6 @@
-x = 2 ++ 3;
-
-
-
-
+juego MiniAventura {
+    escena Inicio {
+        mostrar "¡Bienvenido a la aventura!";
+        saltar Taberna;
+    }
+}

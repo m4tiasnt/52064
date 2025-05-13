@@ -11,19 +11,17 @@ LEER : 'leer' ;
 SALTAR : 'saltar' ;
 SI : 'si' ;
 IGUAL : '==' ;
+VALOR : [0-9]+ | '"' .*? '"' ;  // Define VALOR before TEXTO to prioritize it in comparisons
 TEXTO : '"' .*? '"' ;
-NOMBRE : IDENTIFICADOR ;  // REVISAR
-VARIABLE : IDENTIFICADOR ;  // REVISAR
-IDENTIFICADOR : [a-zA-Z][a-zA-Z0-9]* ;
-VALOR : NUMERO | TEXTO ;
 NUMERO : [0-9]+ ;
+VARIABLE : [a-zA-Z][a-zA-Z0-9]* ;
 
 WS : [ \t\r\n]+ -> skip ; 
 
 
 // Parser
 juego
-    : JUEGO NOMBRE LBRACKET escenas RBRACKET
+    : JUEGO VARIABLE LBRACKET escenas RBRACKET
     ;
 
 escenas
@@ -31,7 +29,7 @@ escenas
     ;
 
 escena
-    : ESCENA NOMBRE LBRACKET acciones RBRACKET
+    : ESCENA VARIABLE LBRACKET acciones RBRACKET
     ;
 
 acciones 
@@ -39,7 +37,7 @@ acciones
     ;
 
 imprimir
-    : MOSTRAR TEXTO PYC
+    : MOSTRAR VALOR PYC
     ;
 
 leer
@@ -47,7 +45,7 @@ leer
     ;
 
 condicion
-    : SI comparacion SALTAR NOMBRE PYC
+    : SI comparacion SALTAR VARIABLE PYC
     ;
 
 comparacion
@@ -55,7 +53,7 @@ comparacion
     ;
 
 saltar
-    : SALTAR NOMBRE PYC
+    : SALTAR VARIABLE PYC
     ;
 
 

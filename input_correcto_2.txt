@@ -1,8 +1,44 @@
-x = 1
-y = 2
-z = 3 *(x + y)
-z
-
-
-
-
+juego MiniAventura {
+    escena Inicio {
+        mostrar "Te encuentras en un pequeño pueblo. ¿A dónde quieres ir?";
+        mostrar "1: Taberna, 2: Bosque, 3: Tienda";
+        leer eleccion;
+        si eleccion == 1 saltar Taberna;
+        si eleccion == 2 saltar Bosque;
+        si eleccion == 3 saltar Tienda;
+        mostrar "No entendí tu elección. Te diriges a la taberna.";
+        saltar Taberna;
+    }
+    
+    escena Taberna {
+        mostrar "En la taberna encuentras al tabernero y algunos aventureros.";
+        mostrar "¿Hablar con el tabernero? (si/no)";
+        leer respuesta;
+        si respuesta == "si" saltar MisionTabernero;
+        si respuesta == "no" saltar Final;
+        mostrar "Al no decidirte, sales de la taberna.";
+        saltar Final;
+    }
+    
+    escena MisionTabernero {
+        mostrar "El tabernero te cuenta sobre un tesoro en el bosque.";
+        mostrar "¡Has completado la misión de la taberna!";
+        saltar Final;
+    }
+    
+    escena Bosque {
+        mostrar "En el bosque encuentras un cofre brillante.";
+        mostrar "¡Has encontrado el tesoro del que hablan en el pueblo!";
+        saltar Final;
+    }
+    
+    escena Tienda {
+        mostrar "El comerciante te ofrece una espada mágica a buen precio.";
+        mostrar "Lamentablemente no tienes suficiente oro.";
+        saltar Final;
+    }
+    
+    escena Final {
+        mostrar "Aventura completada. ¡Gracias por jugar!";
+    }
+}

@@ -1,0 +1,36 @@
+juego aventura {
+    escena inicio {
+        mostrar "Bienvenido a la prueba de navegación";
+        mostrar "Por favor, ingresa tu nombre (Alice, Bob, o cualquier otro)";
+        leer nombre;
+        si nombre == "Alice" saltar rutaAlice;
+        si nombre == "Bob" saltar rutaBob;
+    }
+    escena rutaDesconocida {
+        mostrar "Eres un viajero desconocido";
+        mostrar "¿Hacia dónde quieres ir? (1: bosque, 2: ciudad)";
+        leer destino;
+        si destino == "1" saltar bosque;
+        si destino == "2" saltar ciudad;
+    }
+    escena rutaAlice {
+        mostrar "Hola Alice, bienvenida de nuevo";
+        saltar bosque;
+    }
+    escena rutaBob {
+        mostrar "Hola Bob, bienvenido de nuevo";
+        saltar ciudad;
+    }
+    escena bosque {
+        mostrar "Has llegado al bosque encantado";
+        saltar final;
+    }
+    escena ciudad {
+        mostrar "Has llegado a la bulliciosa ciudad";
+        saltar final;
+    }
+    escena final {
+        mostrar "Fin de la aventura";
+        mostrar "Gracias por probar la navegación";
+    }
+}

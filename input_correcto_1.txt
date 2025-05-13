@@ -1,8 +1,5 @@
-x = 2 + 3
-y = 3
-z = x + y
-z
-
-
-
-
+juego Aventura {
+     escena Introduccion {
+          mostrar "Bienvenido a la aventura.";
+     }
+}

@@ -1,4 +1,4 @@
-// Generated from c:/Users/moliva/Desktop/sintaxis/52064/antlr-calculator-project/Juego.g4 by ANTLR 4.13.2
+// Generated from c:/Users/moliva/Desktop/sintaxis/52064/antlr-juego-project/Juego.g4 by ANTLR 4.13.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
 

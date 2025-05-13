@@ -57,9 +57,9 @@ A modo de resumen, los cambios realizados son los siguientes:
    node index.js
    ```
    > [!NOTE]
-   > El programa se ejecuta con un archivo de entrada por defecto llamado `input.txt`. En este proyecto se adjuntan 4 entradas de ejemplo: 
-   
-   > `input_correcto_1.txt`: es el ejemplo que figuraba con la gramática.
-   > `input_correcto_2.txt`: es una entrada más compleja para desafiar la gramática.
-   > `input_incorrecto_1.txt`: tiene un error semántico dado que la escena referenciada no existe. 
-   > `input_incorrecto_2.txt`. tiene un error sintáctico dado que falta el punto y coma al final de la línea.
+   > El programa se ejecuta con un archivo de entrada por defecto llamado `input.txt`. En este proyecto se adjuntan 4 entradas de ejemplo:
+   > 
+   > - `input_correcto_1.txt`: es el ejemplo incluido con la gramática.
+   > - `input_correcto_2.txt`: es una entrada más compleja para desafiar al programa.
+   > - `input_incorrecto_1.txt`: tiene un error semántico dado que la escena referenciada no existe. 
+   > - `input_incorrecto_2.txt`: tiene un error sintáctico dado que falta el punto y coma al final de la línea.

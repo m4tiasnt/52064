@@ -13,15 +13,14 @@ La transcripción de la gramática asignada se encuentra en el archivo `gramatic
 <escena> ::= "escena" <variable> "{" <acciones> "}"
 <acciones> ::= { <imprimir> | <leer> | <condición> | <saltar> }
 
-<imprimir> ::= "mostrar" <texto> ";"
+<imprimir> ::= "mostrar" <valor> ";"
 <leer> ::= "leer" <variable> ";"
-<condición> ::= "si" <comparación> "saltar" <variable> ";" // MODIFICADO - ANTES ERA: <condición> ::= "si" <comparación> "saltar" <escena> ";"
+<condición> ::= "si" <comparación> "saltar" <variable> ";" 
 <comparación> ::= <variable> "==" <valor>
-<saltar> ::= "saltar" <variable> ";" // AGREGADO - quizás no va?
+<saltar> ::= "saltar" <variable> ";"
 
-<texto> ::= '"' { <caracter> } '"' 
+<valor> ::= <numero> | '"' { <caracter> } '"' 
 <variable> ::= <caracter> { <caracter> | <digito> } 
-<valor> ::= <numero> | <texto>
 
 <caracter> ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
 <digito> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
@@ -31,9 +30,11 @@ La transcripción de la gramática asignada se encuentra en el archivo `gramatic
 
 A modo de resumen, los cambios realizados son los siguientes:
 - Se unificaron las definiciones de `<nombre>` y `<variable>`, ya que ambas se refieren a un identificador.
+- Se unificó `<texto>` y `<valor>`, ya que ambas se refieren a un valor que puede ser un número o una cadena de texto.
 - Se modificó `<escena>` por `<variable>` en `<condición>`. 
 - Se agregó la definición de `<saltar>` que no estaba presente.
 - Se agregó la definición de `<texto>`, `<variable>`, `<valor>`, `<caracter>`, `<digito>` y `<numero>` para completar la gramática.
+- Se eliminó el uso de caracteres acentuados. No estaba aclarado en la gramática, y pueden generar problemas con ANTLR o al momento de interpretar el código.
 
 # Cómo ejecutar el proyecto
 

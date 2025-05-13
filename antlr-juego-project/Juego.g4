@@ -11,8 +11,7 @@ LEER : 'leer' ;
 SALTAR : 'saltar' ;
 SI : 'si' ;
 IGUAL : '==' ;
-VALOR : [0-9]+ | '"' .*? '"' ;  // Define VALOR before TEXTO to prioritize it in comparisons
-TEXTO : '"' .*? '"' ;
+VALOR : [0-9]+ | '"' .*? '"' ;
 NUMERO : [0-9]+ ;
 VARIABLE : [a-zA-Z][a-zA-Z0-9]* ;
 

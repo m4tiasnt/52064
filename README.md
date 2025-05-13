@@ -4,7 +4,7 @@ Este proyecto es un analizador léxico, sintáctico y semántico para crear jueg
 
 # Información sobre la gramática
 
-La transcripción de la gramática asignada se encuentra en el archivo `gramatica_asignada.md`. Sin embargo, fue necesario realizar algunos cambios para que la gramática fuera válida. A continuación se presenta la gramática corregida:
+La transcripción de la gramática asignada se encuentra en el archivo `gramaticaAsignada.md`. Sin embargo, fue necesario realizar algunos cambios para que la gramática fuera válida. A continuación se presenta la gramática corregida:
 
 ```
 <juego> ::= "juego" <variable> "{" <escenas> "}"

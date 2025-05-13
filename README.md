@@ -41,6 +41,8 @@ A modo de resumen, los cambios realizados son los siguientes:
 
 - Tener instalado Java 1.8 o superior.
 - Tener instalado Node.js 16 o superior.
+- Tener instalado ANTLR 4.13.0 o superior.
+- Tener instalado el plugin de ANTLR para Visual Studio Code (opcional, pero recomendado).
 
 ## Ejecución
 
@@ -48,13 +50,15 @@ A modo de resumen, los cambios realizados son los siguientes:
    ```bash
    git clone https://github.com/m4tiasnt/52064.git
    ```
-2. Navegar al directorio del proyecto:   ```bash
+2. Navegar al directorio del proyecto:   
+   ```bash
    cd 52064/antlr-juego-project
     ```
 3. Ejecutar el programa principal:
    ```bash
    node index.js
    ```
+
 > [!NOTE]
 > El programa se ejecuta con un archivo de entrada por defecto llamado `input.txt`. En este proyecto se adjuntan 4 entradas de ejemplo:
 >

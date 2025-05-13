@@ -34,7 +34,7 @@ A modo de resumen, los cambios realizados son los siguientes:
 - Se modificó `<escena>` por `<variable>` en `<condición>`. 
 - Se agregó la definición de `<saltar>` que no estaba presente.
 - Se agregó la definición de `<texto>`, `<variable>`, `<valor>`, `<caracter>`, `<digito>` y `<numero>` para completar la gramática.
-- Se eliminó el uso de caracteres acentuados. No estaba aclarado en la gramática, y pueden generar problemas con ANTLR o al momento de interpretar el código.
+- No se permite el uso de caracteres acentuados. No estaba aclarado en la gramática dada y podría generar problemas con ANTLR o al momento de interpretar el código.
 
 # Cómo ejecutar el proyecto
 

@@ -48,18 +48,17 @@ A modo de resumen, los cambios realizados son los siguientes:
    ```bash
    git clone https://github.com/m4tiasnt/52064.git
    ```
-2. Navegar al directorio del proyecto:
-   ```bash
+2. Navegar al directorio del proyecto:   ```bash
    cd 52064/antlr-juego-project
     ```
 3. Ejecutar el programa principal:
    ```bash
    node index.js
    ```
-   > [!NOTE]
-   > El programa se ejecuta con un archivo de entrada por defecto llamado `input.txt`. En este proyecto se adjuntan 4 entradas de ejemplo:
-   > 
-   > - `input_correcto_1.txt`: es el ejemplo incluido con la gramática.
-   > - `input_correcto_2.txt`: es una entrada más compleja para desafiar al programa.
-   > - `input_incorrecto_1.txt`: tiene un error semántico dado que la escena referenciada no existe. 
-   > - `input_incorrecto_2.txt`: tiene un error sintáctico dado que falta el punto y coma al final de la línea.
+> [!NOTE]
+> El programa se ejecuta con un archivo de entrada por defecto llamado `input.txt`. En este proyecto se adjuntan 4 entradas de ejemplo:
+>
+> - `input_correcto_1.txt`: es el ejemplo incluido con la gramática.
+> - `input_correcto_2.txt`: es una entrada más compleja para desafiar al programa.
+> - `input_incorrecto_1.txt`: tiene un error semántico dado que la escena referenciada no existe. 
+> - `input_incorrecto_2.txt`: tiene un error sintáctico dado que falta el punto y coma al final de la línea.

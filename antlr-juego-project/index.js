@@ -70,7 +70,7 @@ async function main() {
     let tree = parser.juego(); 
 
     // Verificar si se produjeron errores sintácticos
-    if (parser.numberOfSyntaxErrors > 0) {
+    if (parser.syntaxErrorsCount > 0) {
         console.error("\nSe encontraron errores de sintaxis en la entrada.");
         return;
     } else {        console.log("\nEntrada válida.");
